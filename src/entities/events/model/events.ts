@@ -1,4 +1,4 @@
-import { createSelector, createSlice } from "@reduxjs/toolkit";
+import { createSelector, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "app/store";
 import { useSelector } from "react-redux";
 
@@ -19,7 +19,11 @@ const initialState: Events = [
 const eventsSlice = createSlice({
   name: "events",
   initialState,
-  reducers: {},
+  reducers: {
+    create: (state, { payload }: PayloadAction<Event>) => {
+      state.push(payload);
+    },
+  },
 });
 
 export const eventsSelector = (state: RootState) => state.events;
@@ -30,5 +34,7 @@ export const useEvents = (year: number, month: number) =>
       events.filter((ev) => ev.year === year && ev.month === month)
     )
   );
+
+export const { create } = eventsSlice.actions;
 
 export const eventsReducer = eventsSlice.reducer;
