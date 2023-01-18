@@ -1,19 +1,11 @@
-import styled from "@emotion/styled";
 import { useAppDispatch } from "app/store";
 import { create } from "entities";
 import { Field, Form, Formik } from "formik";
 import { useNavigate, useParams } from "react-router-dom";
-import { Overlay } from "shared";
+import { EventBox, Overlay } from "shared";
 import { v4 as uuid } from "uuid";
-
-const EventBox = styled.div`
-  width: 40vw;
-  height: 100vh;
-  float: right;
-  padding: 1rem;
-
-  background-color: white;
-`;
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faClose } from "@fortawesome/free-solid-svg-icons";
 
 const AddEvent = () => {
   const dispatch = useAppDispatch();
@@ -23,11 +15,13 @@ const AddEvent = () => {
   return (
     <Overlay>
       <EventBox>
-        <div className="flex space-between">
+        <div className="flex space-between items-center">
           <h2>Event</h2>
-          <h1 className="pointer" onClick={() => navigate(-1)}>
-            X
-          </h1>
+          <FontAwesomeIcon
+            className="pointer"
+            icon={faClose}
+            onClick={() => navigate(-1)}
+          />
         </div>
 
         <div className="mb-1">

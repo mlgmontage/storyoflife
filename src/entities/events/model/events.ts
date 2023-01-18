@@ -35,6 +35,13 @@ export const useEvents = (year: number, month: number) =>
     )
   );
 
+export const useEvent = (id: string) =>
+  useSelector(
+    createSelector(eventsSelector, (events) =>
+      events.find((ev) => ev.id === id)
+    )
+  );
+
 export const { create } = eventsSlice.actions;
 
 export const eventsReducer = eventsSlice.reducer;

@@ -1,5 +1,5 @@
 import { YearBox, MonthBox } from "entities";
-import { Link, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import { MonthGrid, monthNames, range } from "shared";
 
 const Home = () => {

@@ -46,3 +46,12 @@ export const Overlay: React.FC<PropsWithChildren> = ({ children }) => {
 
   return <OverlayStyled>{children}</OverlayStyled>;
 };
+
+export const EventBox = styled.div`
+  width: 40vw;
+  height: 100vh;
+  float: right;
+  padding: 1rem;
+
+  background-color: white;
+`;
