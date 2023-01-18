@@ -2,6 +2,10 @@
 @import url("./text.css");
 @import url("./containers.css");
 
+* {
+  box-sizing: border-box;
+}
+
 :root {
   --gray-100: hsl(0, 0%, 90%);
   --gray-200: hsl(0, 0%, 80%);

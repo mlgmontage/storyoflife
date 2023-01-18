@@ -1,6 +1,6 @@
-import { YearBox } from "entities";
-import { Outlet } from "react-router-dom";
-import { Month, MonthGrid, monthNames, range } from "shared";
+import { YearBox, MonthBox } from "entities";
+import { Link, Outlet } from "react-router-dom";
+import { MonthGrid, monthNames, range } from "shared";
 
 const Home = () => {
   const birthdayString = "11/15/1997";
@@ -19,7 +19,8 @@ const Home = () => {
             {range(12).map((month) => (
               <div key={month}>
                 <small className="text-gray-300">{monthNames[month]}</small>
-                <Month>{month}</Month>
+                <MonthBox />
+                <Link to={`/create/${year}/${month}`}>+</Link>
               </div>
             ))}
           </MonthGrid>

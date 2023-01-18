@@ -6,7 +6,7 @@ const Routing = () => {
   return (
     <Routes>
       <Route path="/" element={<Home />}>
-        <Route path="create" element={<AddEvent />} />
+        <Route path="/create/:year/:month" element={<AddEvent />} />
       </Route>
     </Routes>
   );

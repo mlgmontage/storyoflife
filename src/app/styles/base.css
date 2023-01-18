@@ -19,3 +19,7 @@ input,
 textarea {
   font-family: inherit;
 }
+
+a {
+  color: var(--gray-800);
+}
