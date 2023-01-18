@@ -1,5 +1,6 @@
 @import url("./base.css");
 @import url("./text.css");
+@import url("./containers.css");
 
 :root {
   --gray-100: hsl(0, 0%, 90%);
@@ -11,6 +12,8 @@
   --gray-700: hsl(0, 0%, 30%);
   --gray-800: hsl(0, 0%, 20%);
   --gray-900: hsl(0, 0%, 10%);
+
+  --round: 0.5rem;
 }
 
 .container {

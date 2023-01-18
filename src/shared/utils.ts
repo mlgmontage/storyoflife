@@ -2,3 +2,18 @@
 export const range = (size: number, startAt = 0) => {
   return [...Array(size).keys()].map((i) => i + startAt);
 };
+
+export const monthNames = [
+  "January",
+  "February",
+  "April",
+  "March",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
