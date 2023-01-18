@@ -19,8 +19,7 @@ const Home = () => {
             {range(12).map((month) => (
               <div key={month}>
                 <small className="text-gray-300">{monthNames[month]}</small>
-                <MonthBox />
-                <Link to={`/create/${year}/${month}`}>+</Link>
+                <MonthBox year={year} month={month} />
               </div>
             ))}
           </MonthGrid>

@@ -7,10 +7,19 @@ export const MonthGrid = styled.div`
   gap: 1rem;
 `;
 
-export const Month = styled.div`
-  height: 150px;
-  background-color: var(--gray-100);
+type MonthProps = {
+  type: "past" | "current" | "future";
+};
 
+export const Month = styled.div<MonthProps>`
+  height: 150px;
+  background-color: ${(props) =>
+    props.type === "past" ? "var(--gray-100)" : "transparent"};
+
+  border: ${(props) =>
+    props.type === "future" ? "1px solid var(--gray-100)" : "none"};
+
+  border-radius: var(--round);
   overflow-y: auto;
   overflow-x: hidden;
 `;
