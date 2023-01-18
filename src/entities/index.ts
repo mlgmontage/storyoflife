@@ -1,1 +1,1 @@
-export * from "./timebox/ui/yearbox";
+export * from "./events/ui/yearbox";
