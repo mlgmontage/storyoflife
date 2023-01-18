@@ -2,7 +2,7 @@ import { createSelector, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "app/store";
 import { useSelector } from "react-redux";
 
-type Event = {
+export type Event = {
   id: string;
   year: number;
   month: number;

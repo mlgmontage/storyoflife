@@ -28,7 +28,7 @@ const ViewEvent = () => {
             onClick={() => navigate(-1)}
           />
         </div>
-        <h1> {event?.title}</h1>
+        <h1 className="underline">{event?.title}</h1>
         <div>{event?.event}</div>
       </EventBox>
     </Overlay>
