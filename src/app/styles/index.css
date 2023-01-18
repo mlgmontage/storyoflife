@@ -13,10 +13,13 @@
   --gray-800: hsl(0, 0%, 20%);
   --gray-900: hsl(0, 0%, 10%);
 
+  --overlay: hsla(0, 0%, 0%, 0.3);
+
   --round: 0.5rem;
 }
 
 .container {
+  display: flow-root;
   width: 1200px;
   margin-inline: auto;
 }

@@ -1,4 +1,5 @@
 import { YearBox } from "entities";
+import { Outlet } from "react-router-dom";
 import { Month, MonthGrid, monthNames, range } from "shared";
 
 const Home = () => {
@@ -7,7 +8,7 @@ const Home = () => {
   const years = range(80, birthday.getFullYear());
 
   return (
-    <div>
+    <div className="container">
       <h1>
         <center>Story of life</center>
       </h1>
@@ -16,7 +17,7 @@ const Home = () => {
         <YearBox key={age} year={year} age={age}>
           <MonthGrid>
             {range(12).map((month) => (
-              <div>
+              <div key={month}>
                 <small className="text-gray-300">{monthNames[month]}</small>
                 <Month>{month}</Month>
               </div>
@@ -24,6 +25,8 @@ const Home = () => {
           </MonthGrid>
         </YearBox>
       ))}
+
+      <Outlet />
     </div>
   );
 };

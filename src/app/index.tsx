@@ -3,11 +3,7 @@ import { withProviders } from "./providers/with-providers";
 import "./styles/index.css";
 
 const App = () => {
-  return (
-    <div className="container">
-      <Routing />
-    </div>
-  );
+  return <Routing />;
 };
 
 export default withProviders(App);

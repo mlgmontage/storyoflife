@@ -1,8 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
+import { eventsReducer } from "entities/events/model/events";
 import { useSelector, useDispatch, TypedUseSelectorHook } from "react-redux";
 
 export const store = configureStore({
-  reducer: {},
+  reducer: {
+    events: eventsReducer,
+  },
   devTools: true,
 });
 
