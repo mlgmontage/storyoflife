@@ -14,10 +14,10 @@ type MonthProps = {
 export const Month = styled.div<MonthProps>`
   height: 150px;
   background-color: ${(props) =>
-    props.type === "past" ? "var(--gray-100)" : "transparent"};
+    props.type === "future" ? "var(--gray-100)" : "transparent"};
 
   border: ${(props) =>
-    props.type === "future" ? "1px solid var(--gray-100)" : "none"};
+    props.type === "past" ? "1px solid var(--gray-100)" : "none"};
 
   border-radius: var(--round);
   overflow-y: auto;

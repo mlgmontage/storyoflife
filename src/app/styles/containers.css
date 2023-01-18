@@ -2,6 +2,10 @@ div[class*="flex"] {
   display: flex;
 }
 
+.space-between {
+  justify-content: space-between;
+}
+
 .gap-1 {
   gap: 1rem;
 }
