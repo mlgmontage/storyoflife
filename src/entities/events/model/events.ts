@@ -23,6 +23,10 @@ const eventsSlice = createSlice({
     create: (state, { payload }: PayloadAction<Event>) => {
       state.push(payload);
     },
+    edit: (state, { payload }: PayloadAction<Event>) => {
+      const id = state.findIndex((ev) => ev.id === payload.id);
+      state[id] = payload;
+    },
   },
 });
 
@@ -42,6 +46,6 @@ export const useEvent = (id: string) =>
     )
   );
 
-export const { create } = eventsSlice.actions;
+export const { create, edit } = eventsSlice.actions;
 
 export const eventsReducer = eventsSlice.reducer;

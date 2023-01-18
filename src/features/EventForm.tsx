@@ -1,5 +1,5 @@
 import { useAppDispatch } from "app/store";
-import { create } from "entities";
+import { create, edit } from "entities";
 import { Field, Form, Formik } from "formik";
 import { useNavigate } from "react-router-dom";
 import { v4 as uuid } from "uuid";
@@ -17,19 +17,34 @@ export const EventForm: React.FC<Props> = ({ event, type }) => {
   return (
     <Formik
       initialValues={{
-        event: "",
-        title: "",
+        event: event.event ?? "",
+        title: event.title ?? "",
       }}
       onSubmit={(values, helpers) => {
-        dispatch(
-          create({
-            id: uuid(),
-            event: values.event,
-            title: values.title,
-            year: event.year!,
-            month: event.month!,
-          })
-        );
+        if (type === "create") {
+          dispatch(
+            create({
+              id: uuid(),
+              event: values.event,
+              title: values.title,
+              year: event.year!,
+              month: event.month!,
+            })
+          );
+        }
+
+        if (type === "edit") {
+          dispatch(
+            edit({
+              id: event.id!,
+              event: values.event,
+              title: values.title,
+              year: event.year!,
+              month: event.month!,
+            })
+          );
+        }
+
         helpers.resetForm();
         navigate(-1);
       }}
