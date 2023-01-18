@@ -29,3 +29,22 @@
 .no-decoration {
   text-decoration: none;
 }
+
+.underline {
+  display: inline-block;
+  position: relative;
+}
+
+.underline::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  height: 0.2em;
+  width: 100%;
+  background-color: var(--yellow-500);
+
+  transform: rotate(-3deg);
+}

@@ -9,9 +9,9 @@ const Home = () => {
 
   return (
     <div className="container">
-      <h1>
-        <center>Story of life</center>
-      </h1>
+      <center>
+        <h1 className="underline">Story of life</h1>
+      </center>
 
       {years.map((year, age) => (
         <YearBox key={age} year={year} age={age}>

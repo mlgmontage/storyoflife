@@ -19,7 +19,7 @@ export const YearBox: React.FC<Props> = ({ year, age, children }) => {
   return (
     <Box>
       <h2 className="text-gray-700">
-        {year}{" "}
+        <span className="underline">{year}</span>{" "}
         <small className="text-gray-400">
           {age} years {currentYear === year && "(current)"}
         </small>{" "}

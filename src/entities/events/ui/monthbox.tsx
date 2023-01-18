@@ -30,7 +30,7 @@ export const MonthBox: React.FC<Props> = ({ month, year }) => {
       <Month type={monthType}>
         {events.map((ev, i) => (
           <Event to="/" key={i}>
-            {ev.title}
+            {ev.title.slice(0, 15)}
           </Event>
         ))}
       </Month>
