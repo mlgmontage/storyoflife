@@ -1,10 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { eventsReducer } from "entities/events/model/events";
+import { userReducer } from "entities/user/model/user";
 import { useSelector, useDispatch, TypedUseSelectorHook } from "react-redux";
 
 export const store = configureStore({
   reducer: {
     events: eventsReducer,
+    user: userReducer,
   },
   devTools: true,
 });

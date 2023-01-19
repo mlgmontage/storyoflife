@@ -12,9 +12,7 @@ export type Event = {
 
 type Events = Event[];
 
-const initialState: Events = [
-  { id: "1", year: 1997, month: 10, title: "Born", event: "Getting born" },
-];
+const initialState: Events = [];
 
 const eventsSlice = createSlice({
   name: "events",

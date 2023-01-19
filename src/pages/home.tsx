@@ -1,10 +1,14 @@
-import { YearBox, MonthBox } from "entities";
-import { Outlet } from "react-router-dom";
+import { YearBox, MonthBox, userSelector } from "entities";
+import { useSelector } from "react-redux";
+import { Navigate, Outlet } from "react-router-dom";
 import { MonthGrid, monthNames, range } from "shared";
 
 const Home = () => {
-  const birthdayString = "11/15/1997";
-  const birthday = new Date(birthdayString);
+  const user = useSelector(userSelector);
+
+  if (!user.birthday.length) return <Navigate to="/user" />;
+
+  const birthday = new Date(user.birthday);
   const years = range(80, birthday.getFullYear());
 
   return (
